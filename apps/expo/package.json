@@ -5,13 +5,24 @@
   "dependencies": {
     "@testing-library/jest-native": "*",
     "@testing-library/react-native": "*",
-    "react-native": "*",
-    "expo": "*",
+    "react-native": "0.71.4",
+    "expo": "~48.0.9",
     "react-native-svg": "*",
-    "react-native-web": "*"
+    "react-native-web": "*",
+    "@nrwl/expo": "*",
+    "@expo/metro-config": "*",
+    "react": "18.2.0",
+    "expo-splash-screen": "~0.18.1",
+    "expo-status-bar": "~1.4.4"
   },
   "scripts": {
     "eas-build-pre-install": "cd ../../ && cp package-lock.json ./apps/expo/",
-    "postinstall": "rm -r node_modules && cd ../../ && npm install && npx nx sync-deps expo && npx nx ensure-symlink expo"
+    "postinstall": "rm -r node_modules && cd ../../ && npm install && npx nx sync-deps expo && npx nx ensure-symlink expo",
+    "start": "expo start --dev-client",
+    "android": "expo run:android",
+    "ios": "expo run:ios"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.20.0"
   }
 }
